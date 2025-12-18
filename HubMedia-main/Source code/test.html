@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>API Test</h1>
+    <button onclick="testRegister()">Test Register</button>
+    <button onclick="testLogin()">Test Login</button>
+    <div id="output"></div>
+
+    <script>
+    async function testRegister() {
+        const data = {
+            full_name: 'Frontend Test User',
+            email: 'frontendtest@test.com',
+            username: 'frontendtest',
+            password: 'Password123'
+        };
+        
+        try {
+            console.log('Sending:', data);
+            const response = await fetch('http://localhost:3000/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            
+            console.log('Status:', response.status);
+            const result = await response.json();
+            console.log('Result:', result);
+            document.getElementById('output').innerHTML += '<p>Register: ' + JSON.stringify(result) + '</p>';
+        } catch (error) {
+            console.error('Error:', error);
+            document.getElementById('output').innerHTML += '<p>Error: ' + error.message + '</p>';
+        }
+    }
+    
+    async function testLogin() {
+        const data = {
+            email: 'admin@hubmedia.com',
+            password: 'admin123456'
+        };
+        
+        try {
+            console.log('Sending:', data);
+            const response = await fetch('http://localhost:3000/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            
+            console.log('Status:', response.status);
+            const result = await response.json();
+            console.log('Result:', result);
+            document.getElementById('output').innerHTML += '<p>Login: ' + JSON.stringify(result) + '</p>';
+        } catch (error) {
+            console.error('Error:', error);
+            document.getElementById('output').innerHTML += '<p>Error: ' + error.message + '</p>';
+        }
+    }
+    </script>
+</body>
+</html>

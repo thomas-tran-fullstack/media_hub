@@ -1,0 +1,25 @@
+<form action="/auth/login" method="POST">
+    <h2>Login</h2>
+
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="password" name="password" placeholder="Password" required />
+
+    <button type="submit">Login</button>
+</form>
+
+<!-- LINK SANG TRANG ĐĂNG KÝ -->
+<a href="/auth/register">Chưa có tài khoản? Đăng ký</a>
+
+<hr>
+
+<!-- 🎯 LOGIN GOOGLE -->
+<a href="/auth/google" class="google-btn" 
+   style="display:block; margin-top:15px; padding:10px; background:#db4437; color:white; text-align:center; text-decoration:none;">
+    Đăng nhập bằng Google
+</a>
+
+<!-- 🎯 LOGIN FACEBOOK -->
+<a href="/auth/facebook" class="facebook-btn" 
+   style="display:block; margin-top:10px; padding:10px; background:#1877f2; color:white; text-align:center; text-decoration:none;">
+    Đăng nhập bằng Facebook
+</a>

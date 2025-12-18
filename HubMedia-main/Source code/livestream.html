@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livestream Studio - Hub Media</title>
+    <meta name="description" content="Professional Livestream Studio">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/livestream.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hamburger Button (Mobile) -->
+    <button class="hamburger-btn" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="img/Logo2a.png" alt="Hub Media Logo" class="sidebar-logo-image">
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <a href="Index.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span data-i18n="home">Home</span>
+            </a>
+            <a href="schedule.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span data-i18n="schedule">Schedule</span>
+            </a>
+            <a href="livestream.html" class="nav-item active">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
+                <span data-i18n="livestream">Livestream</span>
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="20" x2="12" y2="10"></line>
+                    <line x1="18" y1="20" x2="18" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="16"></line>
+                </svg>
+                <span data-i18n="analytics">Analytics</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 1v6m0 6v6m0-18a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zm0 12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <span data-i18n="settings">Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile active">
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%235B5FED'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="User" class="sidebar-avatar-img">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">User</span>
+                    <a href="profile.html" class="view-profile-link">View Profile</a>
+                </div>
+                <!-- Log Out Button -->
+                <!-- <button class="logout-btn" id="logoutBtn" title="Logout" aria-label="Logout">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                </button> -->
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <div class="header-left">
+                <h1>Livestream Studio</h1>
+                <p>Manage your live broadcasts and interact with viewers.</p>
+            </div>
+            <div class="header-right">
+                <button class="btn-primary" id="goLiveBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                    </svg>
+                    Go Live
+                </button>
+            </div>
+        </header>
+
+        <div class="livestream-container">
+            <!-- Left Column: Stream & Controls -->
+            <div class="stream-main">
+                <!-- Video Player -->
+                <div class="video-container">
+                    <div class="live-badge">
+                        <div class="live-dot"></div>
+                        <span>OFFLINE</span>
+                    </div>
+                    <div class="viewer-count">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span id="viewerCount">0</span>
+                    </div>
+                    <!-- Reaction Container -->
+                    <div class="reaction-container" id="reactionContainer"></div>
+                    
+                    <video id="localVideo" autoplay muted playsinline></video>
+                    <div class="pause-overlay" id="pauseOverlay" style="display:none;">
+                        <div class="pause-text">Phiên Livestream đang được tạm dừng</div>
+                    </div>
+                    <div class="countdown-overlay" id="countdownOverlay" style="display:none;">
+                        <div class="countdown-number" id="countdownNumber">5</div>
+                    </div>
+                    <div class="video-placeholder" id="videoPlaceholder">
+                        <h3>Stream Offline</h3>
+                        <p>Click "Go Live" to start streaming</p>
+                    </div>
+                    
+                    <!-- Floating Reaction Button -->
+                    <button class="btn-floating-reaction" id="reactionBtn" title="Send Love">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Controls Bar -->
+                <div class="stream-controls-bar">
+                    <div class="control-group">
+                        <button class="btn-control active" id="micBtn" title="Microphone">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                <line x1="12" y1="19" x2="12" y2="23"></line>
+                                <line x1="8" y1="23" x2="16" y2="23"></line>
+                            </svg>
+                        </button>
+                        <button class="btn-control active" id="camBtn" title="Camera">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 7l-7 5 7 5V7z"></path>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                            </svg>
+                        </button>
+                        <button class="btn-control" id="pauseBtn" title="Pause/Continue">
+                            <!-- pause icon (two bars) shown by default -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="pauseIcon">
+                                <rect x="6" y="5" width="4" height="14"></rect>
+                                <rect x="14" y="5" width="4" height="14"></rect>
+                            </svg>
+                            <!-- play icon hidden, will swap via JS when paused -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="playIcon" style="display:none;">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="stream-info-edit">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                        <span class="stream-title-preview">Weekly Q&A Session - Discussing New Features</span>
+                    </div>
+
+                    <!-- settings button removed -->
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Duration</div>
+                        <div class="stat-value" id="streamTimer">00:00:00</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-label">View</div>
+                        <div class="stat-value" id="viewerCountBox">0</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-label">FPS</div>
+                        <div class="stat-value" id="fpsValue">--</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-label">Revenue</div>
+                        <div class="stat-value" style="color: #FFD700;">$<span id="revenueCount">0.00</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Chat -->
+            <div class="chat-panel">
+                <div class="chat-header">
+                    <div class="chat-tabs">
+                        <button class="tab-btn active" data-tab="chat">Live Chat</button>
+                        <button class="tab-btn" data-tab="moderation">
+                            Moderation
+                            <span class="mod-badge" id="modCount" style="display: none;">0</span>
+                        </button>
+                    </div>
+                    <div class="chat-controls">
+                        <label class="switch" title="Toggle Moderation">
+                            <input type="checkbox" id="moderationToggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Live Chat Tab -->
+                <div class="tab-content active" id="chatTab">
+                    <div class="chat-messages" id="liveChatMessages">
+                        <!-- Messages will be added by JS -->
+                    </div>
+                </div>
+
+                <!-- Moderation Tab -->
+                <div class="tab-content" id="moderationTab">
+                    <div class="moderation-queue" id="moderationQueue">
+                        <div class="empty-state">
+                            <p>No messages pending approval</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <div class="input-wrapper">
+                        <button class="btn-gift" id="giftBtn" title="Send Gift">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                                <rect x="2" y="7" width="20" height="5"></rect>
+                                <line x1="12" y1="22" x2="12" y2="7"></line>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                            </svg>
+                        </button>
+                        <input type="text" class="chat-input" placeholder="Say something...">
+                        <button class="btn-send">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Gift Modal -->
+    <div class="modal-overlay" id="giftModal">
+        <div class="modal-content gift-modal-content">
+            <div class="modal-header">
+                <h3 data-i18n="sendAGift">Send a Gift</h3>
+                <button class="modal-close" id="closeGiftModal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="gift-grid">
+                <button class="gift-item" data-gift="rose" data-price="1">
+                    <div class="gift-icon">🌹</div>
+                    <div class="gift-name">Rose</div>
+                    <div class="gift-price">$1.00</div>
+                </button>
+                <button class="gift-item" data-gift="coffee" data-price="5">
+                    <div class="gift-icon">☕</div>
+                    <div class="gift-name">Coffee</div>
+                    <div class="gift-price">$5.00</div>
+                </button>
+                <button class="gift-item" data-gift="diamond" data-price="20">
+                    <div class="gift-icon">💎</div>
+                    <div class="gift-name">Diamond</div>
+                    <div class="gift-price">$20.00</div>
+                </button>
+                <button class="gift-item" data-gift="rocket" data-price="50">
+                    <div class="gift-icon">🚀</div>
+                    <div class="gift-name">Rocket</div>
+                    <div class="gift-price">$50.00</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camera Confirm Modal -->
+    <div class="modal-overlay" id="cameraConfirmModal">
+        <div class="modal-content confirm-content">
+            <div class="modal-header">
+                <h3>Xác nhận phát trực tiếp</h3>
+                <button class="modal-close" id="closeCameraConfirm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="confirm-body">
+                <p>Ứng dụng sẽ sử dụng camera hệ thống của bạn. Bạn có muốn tiếp tục?</p>
+            </div>
+            <div class="setup-footer">
+                <button class="btn-secondary" id="cancelCameraConfirm">Hủy</button>
+                <button class="btn-primary" id="confirmCameraBtn">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Setup Stream Modal -->
+    <div class="modal-overlay" id="setupModal">
+        <div class="modal-content setup-content">
+            <div class="modal-header">
+                <h3 data-i18n="goLiveSetup">Go Live Setup</h3>
+                <button class="modal-close" id="closeSetupModal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="setup-body">
+                <div class="form-group">
+                    <label data-i18n="streamTitle">Choose Live Session</label>
+                    <select id="streamSessionSelect" class="setup-select">
+                        <option value="">NO LIVE SESSION SELECTED</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label data-i18n="description">Description</label>
+                    <textarea id="streamDescInput" class="setup-textarea" placeholder="Tell viewers what this stream is about..." rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="streamQuality">Stream Quality</label>
+                    <select id="streamQualitySelect" class="setup-select">
+                        <option value="720">720p HD</option>
+                        <option value="1080" selected>1080p Full HD</option>
+                        <option value="1440">1440p 2K</option>
+                        <option value="2160">4K Ultra HD</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label data-i18n="selectPlatforms">Select Platforms</label>
+                    <div class="platform-grid">
+                        <label class="platform-option">
+                            <input type="checkbox" name="streamPlatform" value="youtube" checked>
+                            <div class="p-card">
+                                <div class="p-icon yt">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                                    </svg>
+                                </div>
+                                <span>YouTube</span>
+                            </div>
+                        </label>
+                        <label class="platform-option">
+                            <input type="checkbox" name="streamPlatform" value="facebook">
+                            <div class="p-card">
+                                <div class="p-icon fb">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                    </svg>
+                                </div>
+                                <span>Facebook</span>
+                            </div>
+                        </label>
+                        <label class="platform-option">
+                            <input type="checkbox" name="streamPlatform" value="tiktok">
+                            <div class="p-card">
+                                <div class="p-icon tt">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                                    </svg>
+                                </div>
+                                <span>TikTok</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setup-footer">
+                    <button class="btn-primary full-width" id="startBroadcastBtn" data-i18n="startStreaming">Start Streaming</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stream Summary Modal -->
+    <div class="modal-overlay" id="summaryModal">
+        <div class="modal-content summary-content">
+            <div class="summary-header">
+                <h2 data-i18n="streamEnded">Stream Ended</h2>
+                <p data-i18n="hereIsYourPerformance">Here's how you performed</p>
+            </div>
+            <div class="summary-stats">
+                <div class="summary-stat-item">
+                    <div class="s-label">Duration</div>
+                    <div class="s-value" id="sumDuration">00:00:00</div>
+                </div>
+                <div class="summary-stat-item">
+                    <div class="s-label">Peak Viewers</div>
+                    <div class="s-value" id="sumViewers">0</div>
+                </div>
+                <div class="summary-stat-item">
+                    <div class="s-label">New Followers</div>
+                    <div class="s-value" id="sumFollowers">0</div>
+                </div>
+                <div class="summary-stat-item highlight">
+                    <div class="s-label">Total Revenue</div>
+                    <div class="s-value" id="sumRevenue">$0.00</div>
+                </div>
+            </div>
+            <button class="btn-primary full-width" id="closeSummaryBtn">Close Studio</button>
+        </div>
+    </div>
+
+    <!-- End Confirm Modal -->
+    <div class="modal-overlay" id="endConfirmModal">
+        <div class="modal-content confirm-content">
+            <div class="modal-header">
+                <h3>Kết thúc phát?</h3>
+                <button class="modal-close" id="closeEndConfirm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="confirm-body">
+                <p>Bạn có chắc chắn muốn kết thúc phiên livestream này? Dữ liệu của phiên sẽ được lưu.</p>
+            </div>
+            <div class="setup-footer">
+                <button class="btn-secondary" id="cancelEndConfirm">Hủy</button>
+                <button class="btn-primary" id="confirmEndBtn">Kết thúc</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/mobileMenu.js"></script>
+    <script src="js/livestream.js"></script>
+</body>
+</html>

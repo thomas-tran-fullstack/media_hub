@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Hub Media</title>
+    <meta name="description" content="Hub Media - Quản lý nội dung và phân tích hiệu suất truyền thông">
+    <link rel="stylesheet" href="css/schedule.css">
+    <link rel="stylesheet" href="css/profile.css"/>
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hamburger Button (Mobile) -->
+    <button class="hamburger-btn" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="img/Logo2a.png" alt="Hub Media Logo" class="sidebar-logo-image">
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <a href="Index.html" class="nav-item active">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span data-i18n="home">Home</span>
+            </a>
+            <a href="schedule.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span data-i18n="schedule">Schedule</span>
+            </a>
+            <a href="livestream.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
+                <span data-i18n="livestream">Livestream</span>
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="20" x2="12" y2="10"></line>
+                    <line x1="18" y1="20" x2="18" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="16"></line>
+                </svg>
+                <span data-i18n="analytics">Analytics</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 1v6m0 6v6m0-18a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zm0 12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <span data-i18n="settings">Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile active">
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%235B5FED'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="User" class="sidebar-avatar-img">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">User</span>
+                    <a href="profile.html" class="view-profile-link">View Profile</a>
+                </div>
+                <!-- Log Out Button -->
+                <!-- <button class="logout-btn" id="logoutBtn" title="Logout" aria-label="Logout">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                </button> -->
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="page-header">
+            <div class="header-left">
+                    <h1 data-i18n="welcomeBack">Welcome Back!</h1>
+                <p data-i18n="performanceSummary">Here's your performance summary for today.</p>
+            </div>
+            <div class="header-right">
+                <div class="date-filter">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <div class="custom-dropdown" id="dateFilterDropdown">
+                        <button class="dropdown-toggle" id="dateFilterToggle">
+                            <span class="dropdown-text">Last 30 Days</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu" id="dateFilterMenu">
+                            <div class="dropdown-item active" data-value="30">
+                                <span>Last 30 Days</span>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="dropdown-item" data-value="7">
+                                <span>Last 7 Days</span>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="dropdown-item" data-value="1">
+                                <span>Today</span>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="dropdown-item" data-value="90">
+                                <span>Last 90 Days</span>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-primary" id="createContentBtn" data-i18n="createContent">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span data-i18n="createContent">Create Content</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label">New Followers</span>
+                    <!-- <svg class="trend-icon up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                        <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg> -->
+                </div>
+                <div class="stat-value" data-target="2350">0</div>
+                <div class="stat-change positive">
+                    <span>+8% from last month</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label" data-i18n="engagementRate">Engagement Rate</span>
+                    <!-- <svg class="trend-icon up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                        <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg> -->
+                </div>
+                <div class="stat-value" data-target="5.8">0</div>
+                <div class="stat-change positive">
+                    <span>+0.5% from last month</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label" data-i18n="contentPublished">Content Published</span>
+                    <!-- <svg class="trend-icon down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                        <polyline points="17 18 23 18 23 12"></polyline>
+                    </svg> -->
+                </div>
+                <div class="stat-value" data-target="124">0</div>
+                <div class="stat-change negative">
+                    <span>-6 from last month</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-label" data-i18n="liveViewers">Live Viewers</span>
+                    <!-- <svg class="trend-icon neutral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg> -->
+                </div>
+                <div class="stat-value" data-target="2300">0</div>
+                <div class="stat-change neutral">
+                    <span>Avg. viewers per stream</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Management Section -->
+        <div class="content-management-section">
+                <div class="section-header">
+                <h2 data-i18n="contentManagement">Content Management</h2>
+                <div class="section-actions">
+                    <div class="search-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="contentSearch" placeholder="Search content..." data-i18n-placeholder="searchContentPlaceholder">
+                    </div>
+                    <select id="contentFilter">
+                        <option value="all" data-i18n="allStatus">All Status</option>
+                        <option value="published" data-i18n="published">Published</option>
+                        <option value="draft" data-i18n="draft">Draft</option>
+                        <option value="scheduled" data-i18n="scheduled">Scheduled</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="content-table-container">
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="tableTitle">Title</th>
+                            <th data-i18n="tableCategory">Category</th>
+                            <th data-i18n="tableStatus">Status</th>
+                            <th data-i18n="tableDate">Date</th>
+                            <th data-i18n="tableViews">Views</th>
+                            <th data-i18n="actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contentTableBody">
+                        <!-- Rows will be populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Pagination (Mock) -->
+            <div class="pagination">
+                <span class="page-info">Showing 1-10 of 24 items</span>
+                <div class="page-controls">
+                    <button class="btn-page" disabled>&lt;</button>
+                    <button class="btn-page active">1</button>
+                    <button class="btn-page">2</button>
+                    <button class="btn-page">3</button>
+                    <button class="btn-page">&gt;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Recent Activities -->
+            <div class="card activities-card">
+                <div class="card-header">
+                    <h2 data-i18n="recentActivities">Recent Activities</h2>
+                    <a href="#" class="view-all" id="viewAllActivities" data-i18n="viewAll">View All</a>
+                </div>
+                <div class="activities-list" id="activitiesList">
+                    <!-- Dữ liệu activity sẽ được load từ API -->
+                </div>
+            </div>
+
+            <!-- Publishing Schedule -->
+            <div class="card schedule-card">
+                <div class="card-header">
+                    <h2 data-i18n="publishingSchedule">Publishing Schedule</h2>
+                </div>
+                <div class="schedule-list" id="scheduleList">
+                    <!-- Dữ liệu schedule sẽ được load từ API -->
+                </div>
+                <button class="btn-secondary full-width" id="viewCalendarBtn" data-i18n="viewFullCalendar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span data-i18n="viewFullCalendar">View Full Calendar</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <h3 data-i18n="quickActions">Quick Actions</h3>
+            <div class="actions-grid">
+                <button class="action-btn" id="schedulePostBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span data-i18n="schedule">Schedule Post</span>
+                </button>
+                <button class="action-btn" id="startLivestreamBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                    </svg>
+                    <span data-i18n="livestream">Start Livestream</span>
+                </button>
+                <button class="action-btn" id="uploadVideoBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <span data-i18n="uploadVideo">Upload Video</span>
+                </button>
+                <button class="action-btn" id="viewAnalyticsBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="20" x2="12" y2="10"></line>
+                        <line x1="18" y1="20" x2="18" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="16"></line>
+                    </svg>
+                    <span data-i18n="analytics">View Analytics</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Content Modal -->
+    <div class="modal" id="contentModal">
+        <div class="modal-dialog" >
+            <div class="modal-content" style="width: 900px;">
+                <div class="modal-header">
+                    <div class="header-text">
+                        <h3 id="modalTitle" data-i18n="createNewContent">Create New Content</h3>
+                            <p data-i18n="shareAcrossPlatforms">Share your content across all platforms</p>
+                    </div>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="contentForm">
+                        <input type="hidden" id="contentId">
+                        
+                        <div class="form-grid">
+                            <!-- Left Column: Media -->
+                            <div class="form-column">
+                                <div class="form-group">
+                                    <label>Media Asset</label>
+                                    <div class="upload-zone" id="uploadZone">
+                                        <input type="file" id="mediaUpload" hidden accept="image/*,video/*">
+                                        <div class="upload-content" id="uploadPlaceholder">
+                                            <div class="upload-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                                </svg>
+                                            </div>
+                                            <p data-i18n="dragDrop">Drag & drop or <span class="browse-text" data-i18n="browseText">Browse</span></p>
+                                            <span class="upload-hint" data-i18n="uploadHint">Supports JPG, PNG, MP4</span>
+                                        </div>
+                                        <div class="media-preview hidden" id="mediaPreview">
+                                            <img id="previewImage" src="" alt="Preview">
+                                            <button type="button" class="remove-media" id="removeMediaBtn">&times;</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label data-i18n="platforms">Platforms</label>
+                                    <div class="platform-grid">
+                                        <label class="platform-checkbox" title="Facebook">
+                                            <input type="checkbox" name="platform" value="facebook">
+                                            <div class="platform-icon fb">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Facebook</span>
+                                        </label>
+                                        <label class="platform-checkbox" title="YouTube">
+                                            <input type="checkbox" name="platform" value="youtube">
+                                            <div class="platform-icon yt">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                                                </svg>
+                                            </div>
+                                            <span>YouTube</span>
+                                        </label>
+                                        <!-- <label class="platform-checkbox" title="Instagram">
+                                            <input type="checkbox" name="platform" value="instagram">
+                                            <div class="platform-icon ig">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                </svg>
+                                            </div>
+                                            <span>Instagram</span>
+                                        </label> -->
+                                        <label class="platform-checkbox" title="TikTok">
+                                            <input type="checkbox" name="platform" value="tiktok">
+                                            <div class="platform-icon tt">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                                                </svg>
+                                            </div>
+                                            <span>TikTok</span>
+                                        </label>
+                                        <label class="platform-checkbox" title="Zalo">
+                                            <input type="checkbox" name="platform" value="zalo">
+                                            <div class="platform-icon zalo">
+                                                <img src="/img/zalo.png" alt="Zalo">
+                                            </div>
+                                            <span>Zalo</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: Details -->
+                            <div class="form-column">
+                                <div class="form-group">
+                                    <div class="label-row">
+                                        <label for="contentTitle" data-i18n="titleLabel">Title</label>
+                                        <span class="char-count" id="titleCount">0/100</span>
+                                    </div>
+                                    <input type="text" id="contentTitle" required placeholder="Enter content title" maxlength="100" data-i18n-placeholder="titleLabel">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contentCategory" data-i18n="categoryLabel">Category</label>
+                                    <div class="select-wrapper">
+                                        <select id="contentCategory">
+                                            <option value="Article">Article</option>
+                                            <option value="Video">Video</option>
+                                            <option value="Livestream">Livestream</option>
+                                        </select>
+                                        <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contentDescription" data-i18n="descriptionLabel">Description</label>
+                                    <textarea id="contentDescription" rows="4" placeholder="What's this content about?" data-i18n-placeholder="descriptionLabel"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Publishing Settings</label>
+                                    <div class="publishing-options">
+                                        <label class="radio-option">
+                                            <input type="radio" name="publishType" value="now" checked>
+                                            <span class="radio-label" data-i18n="publishNow">Publish Now</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="publishType" value="schedule">
+                                            <span class="radio-label" data-i18n="schedule">Schedule</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="publishType" value="draft">
+                                            <span class="radio-label" data-i18n="saveDraft">Save Draft</span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="schedule-picker hidden" id="schedulePicker">
+                                        <input type="datetime-local" id="scheduleDate">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary close-modal-btn" data-i18n="cancel">Cancel</button>
+                    <button class="btn-primary" id="saveContentBtn" data-i18n="createContentButton">Create Content</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scheduled Posts Modal -->
+    <div class="modal" id="scheduleModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="header-text">
+                        <h3 data-i18n="publishingSchedule">Publishing Schedule</h3>
+                        <p data-i18n="publishingScheduleDesc">Quản lý lịch đăng bài và livestream</p>
+                    </div>
+                    <button class="close-modal" id="closeScheduleModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Filter and Search -->
+                    <div class="schedule-filters">
+                        <div class="filter-tabs">
+                            <button class="filter-tab active" data-filter="all" data-i18n="all">Tất cả</button>
+                            <button class="filter-tab" data-filter="article" data-i18n="post">Bài viết</button>
+                            <button class="filter-tab" data-filter="livestream" data-i18n="livestream">Livestream</button>
+                            <button class="filter-tab" data-filter="video" data-i18n="video">Video</button>
+                        </div>
+                        <div class="schedule-search">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input type="text" id="scheduleSearch" placeholder="Tìm kiếm..." data-i18n-placeholder="searchContentPlaceholder">
+                        </div>
+                    </div>
+                    
+                    <!-- Posts List -->
+                    <div class="scheduled-posts-list" id="scheduledPostsList">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                    
+                    <!-- Empty State -->
+                    <div class="schedule-empty hidden" id="scheduleEmpty">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <p>Không tìm thấy bài đăng nào</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activities Modal -->
+    <div class="modal" id="activitiesModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="header-text">
+                        <h3 data-i18n="recentActivities">Recent Activities</h3>
+                        <p data-i18n="recentActivitiesDesc">Tất cả hoạt động gần đây</p>
+                    </div>
+                    <button class="close-modal" id="closeActivitiesModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Filter Tabs -->
+                    <div class="activity-filters">
+                        <button class="filter-tab active" data-filter="all" data-i18n="all">Tất cả</button>
+                        <button class="filter-tab" data-filter="edit" data-i18n="post">Đăng bài</button>
+                        <button class="filter-tab" data-filter="livestream" data-i18n="livestream">Livestream</button>
+                        <!-- <button class="filter-tab" data-filter="approved" data-i18n="approved">Duyệt</button> -->
+                        <button class="filter-tab" data-filter="video" data-i18n="video">Video</button>
+                    </div>
+                    
+                    <!-- Activities List -->
+                    <div class="all-activities-list" id="allActivitiesList">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirm Modal -->
+    <div class="modal-overlay" id="deleteConfirmModal">
+        <div class="modal-content delete-confirm-modal">
+            <div class="modal-header">
+                <h3 data-i18n="confirmDeleteContent">Confirm Delete</h3>
+                <button class="modal-close" data-i18n-title="close" onclick="closeDeleteConfirmModal(); return false;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <span data-i18n="deleteContentConfirm">Are you sure you want to delete this content? This action cannot be undone.</span>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-i18n="cancel" onclick="closeDeleteConfirmModal(); return false;">Cancel</button>
+                <button class="btn-primary btn-danger" id="confirmDeleteBtn" data-i18n="delete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/mobileMenu.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

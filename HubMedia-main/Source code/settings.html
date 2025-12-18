@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Hub Media</title>
+    <meta name="description" content="Manage your profile, integrations, and user permissions for the media hub.">
+    <link rel="stylesheet" href="css/schedule.css">
+    <link rel="stylesheet" href="css/profile.css"/>
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hamburger Button (Mobile) -->
+    <button class="hamburger-btn" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="img/Logo2a.png" alt="Hub Media Logo" class="sidebar-logo-image">
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <a href="Index.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="schedule.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Schedule</span>
+            </a>
+            <a href="livestream.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
+                <span>Livestream</span>
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="20" x2="12" y2="10"></line>
+                    <line x1="18" y1="20" x2="18" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="16"></line>
+                </svg>
+                <span>Analytics</span>
+            </a>
+            <a href="settings.html" class="nav-item active">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 1v6m0 6v6m0-18a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zm0 12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile active">
+                <div class="user-avatar">
+                   <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%235B5FED'/%3E%3Ctext x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EU%3C/text%3E%3C/svg%3E" alt="User" class="sidebar-avatar-img">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">User</span>
+                    <a href="profile.html" class="view-profile-link">View Profile</a>
+                </div>
+                <!-- Log Out Button -->
+                <!-- <button class="logout-btn" id="logoutBtn" title="Logout" aria-label="Logout">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                </button> -->
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="settings-layout">
+            <!-- Settings Navigation -->
+            <div class="settings-sidebar">
+                <div class="settings-title">
+                    <h1 data-i18n="settings">Settings</h1>
+                </div>
+                <nav class="settings-nav">
+                    <button class="settings-nav-item active" data-tab="general">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                        <span data-i18n="general">General</span>
+                    </button>
+                    <button class="settings-nav-item" data-tab="notifications">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span data-i18n="Notification">Notifications</span>
+                    </button>
+                    <button class="settings-nav-item" data-tab="security">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <span data-i18n="security">Security</span>
+                    </button>
+                    <button class="settings-nav-item" data-tab="billing">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                        <span data-i18n="billingPlans">Billing</span>
+                    </button>
+                    <button class="settings-nav-item" data-tab="integrations">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                        </svg>
+                        <span data-i18n="socialIntegrations">Integrations</span>
+                    </button>
+                    <button class="settings-nav-item" data-tab="team">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <span data-i18n="teamMembers">Team Members</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Settings Content -->
+            <div class="settings-content">
+                <!-- General Tab -->
+                <div class="settings-tab active" id="general">
+                    <div class="tab-header">
+                        <h2 data-i18n="generalSettings">General Settings</h2>
+                        <p data-i18n="manageProfile">Manage your profile and account preferences.</p>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3 data-i18n="profileInformation">Profile Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="fullName">Full Name</label>
+                                <input id="full_name" type="text" value="" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="emailAddress">Email Address</label>
+                                <input id="email" type="email" value="" class="form-control" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="miniSupermarket">Mini Supermarket Name</label>
+                            <input id="mini_supermarket" type="text" value="" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="bio">Bio</label>
+                            <textarea id="bio" class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3 data-i18n="regionalSettings">Regional Settings</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="language">Language</label>
+                                <select id="languageSelect" class="form-control">
+                                    <option value="vi">Vietnamese</option>
+                                    <option value="en">English</option>
+                                    <option value="zh">Chinese</option>
+                                    <option value="ko">Korean</option>
+                                    <option value="ru">Russian</option>
+                                    <option value="ja">Japanese</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="timezone">Timezone</label>
+                                <select id="timezoneSelect" class="form-control">
+                                    <option value="asia/ho_chi_minh">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
+                                    <option value="utc">UTC</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button class="btn-primary" id="saveGeneralBtn" data-i18n="saveChanges">Save Changes</button>
+                    </div>
+                </div>
+
+                <!-- Notifications Tab -->
+                <div class="settings-tab" id="notifications">
+                    <div class="tab-header">
+                        <h2 data-i18n="Notification">Notifications</h2>
+                        <p data-i18n="notificationsDesc">Choose how you receive updates and alerts.</p>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3 data-i18n="emailNotifications">Email Notifications</h3>
+                        <div class="toggle-list">
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4 data-i18n="weeklyPerformanceReport">Weekly Performance Report</h4>
+                                    <p data-i18n="weeklyPerformanceReportDesc">Get a summary of your content performance every Monday.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" data-setting="weeklyPerformanceReport" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4 data-i18n="newFeaturesUpdates">New Features & Updates</h4>
+                                    <p data-i18n="newFeaturesUpdatesDesc">Stay informed about new features on Hub Media.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" data-setting="newFeaturesUpdates" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4 data-i18n="securityAlerts">Security Alerts</h4>
+                                    <p data-i18n="securityAlertsDesc">Receive alerts about suspicious activity.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" data-setting="securityAlerts" checked disabled>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3 data-i18n="pushNotifications">Push Notifications</h3>
+                        <div class="toggle-list">
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4 data-i18n="commentsInteractions">Comments & Interactions</h4>
+                                    <p data-i18n="commentsInteractionsDesc">Get notified when someone comments on your posts.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" data-setting="commentsInteractions" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4 data-i18n="scheduleReminders">Schedule Reminders</h4>
+                                    <p data-i18n="scheduleRemindersDesc">Get reminded 15 minutes before a scheduled post.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" data-setting="scheduleReminders">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Tab -->
+                <div class="settings-tab" id="security">
+                    <div class="tab-header">
+                        <h2 data-i18n="security">Security</h2>
+                        <p data-i18n="securityDesc">Keep your account secure.</p>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3 data-i18n="changePassword">Change Password</h3>
+                        <div class="form-group">
+                            <label data-i18n="currentPassword">Current Password</label>
+                            <input id="currentPassword" type="password" class="form-control" data-i18n-placeholder="currentPasswordPlaceholder" placeholder="Enter current password">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="newPassword">New Password</label>
+                                <input id="newPassword" type="password" class="form-control" data-i18n-placeholder="newPassword" placeholder="Enter new password">
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="confirmNewPassword">Confirm New Password</label>
+                                <input id="confirmPassword" type="password" class="form-control" data-i18n-placeholder="confirmNewPassword" placeholder="Confirm new password">
+                            </div>
+                        </div>
+                        <button class="btn-secondary" data-i18n="updatePassword" id="updatePasswordBtn">Update Password</button>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3 data-i18n="twoFactorAuthentication">Two-Factor Authentication</h3>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4 data-i18n="enable2FA">Enable 2FA</h4>
+                                <p data-i18n="enable2FADesc">Add an extra layer of security to your account.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" data-setting="enable2FA">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Billing Tab -->
+                <div class="settings-tab" id="billing">
+                    <div class="tab-header">
+                        <h2 data-i18n="billingPlans">Billing & Plans</h2>
+                        <p data-i18n="billingPlansDesc">Manage your subscription and payment methods.</p>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3 data-i18n="currentPlan">Current Plan</h3>
+                        <div class="plan-info">
+                            <div class="plan-details">
+                                <span class="plan-badge">FREE</span>
+                                <h4 data-i18n="professionalPlan">Professional Plan</h4>
+                                <p data-i18n="professionalPlanDesc">$0/month • Billed monthly</p>
+                            </div>
+                            <button id="manageSubscriptionBtn" class="btn-secondary" data-i18n="manageSubscription">Manage Subscription</button>
+                        </div>
+                        <div class="usage-bar">
+                            <div class="usage-label">
+                                <span data-i18n="storageUsage">Storage Usage</span>
+                                <span>0GB / 64GB</span>
+                            </div>
+                            <div class="progress-bg">
+                                <div class="progress-fill" style="width: 45%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3 data-i18n="paymentMethods">Payment Methods</h3>
+                        <div id="billingPaymentList">
+                            <!-- payment methods for billing card will be injected here -->
+                        </div>
+                        <button id="addPaymentBtn" class="btn-text" data-i18n="addPaymentMethod">+ Add Payment Method</button>
+                    </div>
+                </div>
+
+                <!-- Integrations Tab (Existing Content) -->
+                <div class="settings-tab" id="integrations">
+                    <div class="tab-header">
+                        <h2 data-i18n="socialIntegrations">Social Integrations</h2>
+                        <p data-i18n="socialIntegrationsDesc">Connect your social media accounts to publish content directly.</p>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <div class="integrations-list">
+                            <!-- Facebook -->
+                            <div class="integration-item" data-platform="facebook">
+                                <div class="platform-info">
+                                    <div class="platform-icon facebook">
+                                        <img src="/img/facebook.png" alt="Facebook">
+                                    </div>
+                                    <span data-i18n="facebook">Facebook</span>
+                                </div>
+                                <button class="btn-connect" data-platform="facebook" data-i18n="connect">Connect</button>
+                            </div>
+
+                            <!-- Zalo -->
+                            <div class="integration-item" data-platform="zalo">
+                                <div class="platform-info">
+                                    <div class="platform-icon zalo">
+                                        <img src="/img/zalo.png" alt="Zalo">
+                                    </div>
+                                    <span data-i18n="zalo">Zalo</span>
+                                </div>
+                                <button class="btn-connect" data-platform="zalo" data-i18n="connect">Connect</button>
+                            </div>
+
+                            <!-- TikTok -->
+                            <div class="integration-item" data-platform="tiktok">
+                                <div class="platform-info">
+                                    <div class="platform-icon tiktok">
+                                        <img src="/img/tiktok.png" alt="TikTok">
+                                    </div>
+                                    <span data-i18n="tiktok">TikTok</span>
+                                </div>
+                                <button class="btn-connect" data-platform="tiktok" data-i18n="connect">Connect</button>
+                            </div>
+
+                            <!-- YouTube -->
+                            <div class="integration-item" data-platform="youtube">
+                                <div class="platform-info">
+                                    <div class="platform-icon youtube">
+                                        <img src="/img/youtube.png" alt="YouTube">
+                                    </div>
+                                    <span data-i18n="youtube">YouTube</span>
+                                </div>
+                                <button class="btn-connect" data-platform="youtube" data-i18n="connect">Connect</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Tab (Database-backed) -->
+                <div class="settings-tab" id="team">
+                    <div class="tab-header">
+                        <h2 data-i18n="teamMembers">Team Members</h2>
+                        <p data-i18n="teamMembersDesc">Manage user permissions and access levels.</p>
+                    </div>
+                    
+                    <div class="settings-card" style="padding: 0; overflow: hidden;">
+                        <div class="table-responsive" style="margin: 0;">
+                            <table class="users-table" id="teamMembersTable">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="user">User</th>
+                                        <th data-i18n="role">Role</th>
+                                        <th data-i18n="lastActive">Last Active</th>
+                                        <th style="text-align: right;" data-i18n="actions">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="teamMembersTableBody">
+                                    <!-- Team members will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                            <div class="table-footer">
+                                <button class="btn-primary" id="inviteUserBtn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                    <span data-i18n="inviteUserBtn">Invite User</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/mobileMenu.js"></script>
+    <script src="js/settings.js"></script>
+
+    <!-- Purchase / Change Plan Modal -->
+    <div id="purchaseModal" class="modal hidden">
+        <div class="modal-content" style="width:860px; max-width:96%;">
+            <div class="modal-header">
+                <h3 data-i18n="planLabel">Choose a Plan</h3>
+            </div>
+            <div class="modal-body" style="display:flex;gap:16px;">
+                <div id="plansGrid" style="display:flex;gap:12px;flex:1;align-items:stretch;">
+                    <!-- plan cards injected here -->
+                </div>
+                <div style="width:260px;">
+                    <div class="settings-card" style="padding:12px;">
+                        <h4 data-i18n="purchase">Purchase</h4>
+                        <div class="form-group">
+                            <label data-i18n="months">Months</label>
+                            <input id="purchaseMonths" type="number" class="form-control" value="1" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="paymentMethod">Payment method</label>
+                            <div id="purchasePaymentSelect">Use your default payment method</div>
+                        </div>
+                        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px;">
+                            <button class="btn-secondary" id="purchaseCancel" data-i18n="cancel">Cancel</button>
+                            <button class="btn-primary" id="purchaseBtn" data-i18n="confirmPurchase">Confirm Purchase</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- (old Manage Subscription modal removed - using Purchase modal) -->
+    
+    <!-- Payment Methods Modal (detailed form) -->
+    <div id="paymentModal" class="modal hidden">
+        <div class="modal-content" style="width:520px; max-width:96%;">
+            <div class="modal-header"><h3 data-i18n="addPaymentMethodTitle">Add Payment Method</h3></div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label data-i18n="cardholderName" style="display:block;margin-bottom:8px;">Cardholder name</label>
+                    <input id="pmCardholder" type="text" class="form-control" data-i18n-placeholder="cardholderName" placeholder="Full name">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="cardNumber" style="display:block;margin-bottom:8px;">Card number</label>
+                    <input id="pmCardNumber" type="text" class="form-control" maxlength="19" data-i18n-placeholder="cardNumber" placeholder="4242 4242 4242 4242">
+                </div>
+                <div class="form-row" style="display:flex;gap:8px;">
+                    <div class="form-group" style="flex:1">
+                        <label data-i18n="expiry" style="display:block;margin-bottom:8px;">Expiry (MM/YYYY)</label>
+                        <input id="pmExp" type="text" class="form-control" data-i18n-placeholder="expiry" placeholder="12/2025">
+                    </div>
+                    <div class="form-group" style="width:100px;">
+                        <label data-i18n="cvc" style="display:block;margin-bottom:8px;">CVC</label>
+                        <input id="pmCvc" type="text" class="form-control" maxlength="4" data-i18n-placeholder="cvc" placeholder="123">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="billingAddress" style="display:block;margin-bottom:8px;">Billing address (optional)</label>
+                    <input id="pmAddress" type="text" class="form-control" data-i18n-placeholder="billingAddress" placeholder="Street, City, Country">
+                </div>
+            </div>
+            <div class="modal-footer" style="display:flex;justify-content:flex-end;gap:8px;padding:12px;">
+                <button class="btn-secondary" onclick="document.getElementById('paymentModal').classList.remove('active'); document.getElementById('paymentModal').classList.add('hidden')" data-i18n="close">Close</button>
+                <button class="btn-primary" id="addPaymentSubmit" data-i18n="addPaymentMethod">Add Payment Method</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Invite Modal -->
+    <div id="teamInviteModal" class="modal">
+        <div class="modal-content" style="width: 500px; max-width: 96%;">
+            <div class="modal-header">
+                <h3 id="inviteModalTitle" data-i18n="inviteUserBtn">Invite User</h3>
+                <button class="modal-close" id="inviteModalClose" data-i18n-title="close" style="background: none; border: none; cursor: pointer; font-size: 24px;">×</button>
+            </div>
+            <div class="modal-body" style="padding: 12px;">
+                <div class="form-group">
+                    <label for="inviteEmail" data-i18n="email" style="display:block;margin-bottom:8px;">Email</label>
+                    <div class="autocomplete-wrapper" style="position: relative;">
+                        <input id="inviteEmail" type="email" class="form-control" data-i18n-placeholder="emailPlaceholder" placeholder="Search by email..." autocomplete="off">
+                        <ul id="inviteEmailSuggestions" class="autocomplete-dropdown" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #ddd; border-top: none; list-style: none; margin: 0; padding: 0; z-index: 1000; max-height: 200px; overflow-y: auto;">
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inviteUserFullName" data-i18n="fullName" style="display:block;margin-bottom:8px;">Full Name</label>
+                    <input id="inviteUserFullName" type="text" class="form-control" data-i18n-placeholder="fullName" placeholder="Full name will appear here" readonly style="background-color: #f5f5f5;">
+                </div>
+                <div class="form-group">
+                    <label for="inviteRole" data-i18n="role" style="display:block;margin-bottom:8px;">Role</label>
+                    <select id="inviteRole" class="form-control">
+                        <option value="" data-i18n="selectRole">-- Select Role --</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Editor">Editor</option>
+                        <option value="Assistant">Assistant</option>
+                    </select>
+                </div>
+                <div class="form-actions" style="display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px;">
+                    <button class="btn-secondary" id="inviteCancel" data-i18n="cancel">Cancel</button>
+                    <button class="btn-primary" id="inviteSend" data-i18n="saveChanges">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Team Member Delete Confirm Modal -->
+    <div id="teamDeleteConfirmModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content" style="max-width:420px;padding:10px;">
+                <div class="modal-header"><h3 data-i18n="confirmDelete">Confirm Delete</h3></div>
+                <div class="modal-body" style="padding:6px 4px;">
+                    <p id="teamDeleteConfirmText" style="margin:4px 0;" data-i18n="removeTeamMemberConfirm">Are you sure you want to remove this team member?</p>
+                </div>
+                <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 8px; padding: 6px;">
+                    <button class="btn-secondary" id="teamDeleteCancel" data-i18n="cancel">Cancel</button>
+                    <button class="btn-danger" id="teamDeleteConfirmBtn" data-i18n="delete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirm Modal (for payment methods) -->
+    <div id="deleteConfirmModal" class="modal hidden">
+        <div class="modal-dialog">
+            <div class="modal-content" style="max-width:420px;padding:10px;">
+                <div class="modal-header"><h3 data-i18n="confirmDelete">Confirm Delete</h3></div>
+                <div class="modal-body" style="padding:6px 4px;">
+                    <p id="deleteConfirmText" style="margin:4px 0;" data-i18n="deletePaymentMethodConfirm">Are you sure you want to delete this payment method?</p>
+                </div>
+                <div class="modal-footer" style="display:flex;justify-content:flex-end;gap:8px;padding:6px;">
+                    <button class="btn-secondary" id="deleteCancel" data-i18n="cancel">Cancel</button>
+                    <button class="btn-danger" id="deleteConfirmBtn" data-i18n="delete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

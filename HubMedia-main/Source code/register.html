@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký - Hub Media</title>
+    <meta name="description" content="Tạo tài khoản mới để sử dụng hệ thống quản lý Hub Media">
+    <link rel="stylesheet" href="css/register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <!-- Register Container -->
+    <div class="register-container">
+        <!-- Left Side - Branding -->
+        <div class="register-left">
+            <div class="branding">
+                <div class="logo">
+                    <img src="img/Logo2a.png" alt="Hub Media Logo" class="logo-image">
+                </div>
+                <p class="tagline" data-i18n="registerTagline">Bắt đầu hành trình quản lý dữ liệu thông minh của bạn</p>
+                
+                <div class="benefits">
+                    <h3 data-i18n="whyHub">Tại sao chọn Hub Media?</h3>
+                    <div class="benefit-list">
+                        <div class="benefit-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span data-i18n="trial30">Miễn phí 30 ngày dùng thử</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span data-i18n="noCard">Không cần thẻ tín dụng</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span data-i18n="support24">Hỗ trợ 24/7</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span data-i18n="dataEncrypted">Dữ liệu được mã hóa an toàn</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span data-i18n="detailedReports">Báo cáo chi tiết và phân tích chuyên sâu</span>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="testimonial">
+                    <div class="quote-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                    </div>
+                    <p data-i18n="testimonial">"Hub Media đã giúp chúng tôi tăng hiệu quả quản lý lên 300%. Công cụ tuyệt vời!"</p>
+                    <div class="author">
+                        <strong data-i18n="testimonialAuthor">Nguyễn Văn A</strong>
+                        <span data-i18n="testimonialRole">CEO, Tech Company</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Register Form -->
+        <div class="register-right">
+            <div class="register-box">
+                <div class="register-header">
+                    <h2 data-i18n="createAccount">Tạo tài khoản mới</h2>
+                    <p data-i18n="fillInfo">Điền thông tin để bắt đầu</p>
+                </div>
+
+                <form id="registerForm" class="register-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName" data-i18n="firstName">Họ *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    placeholder="Nhập họ"
+                                    data-i18n-placeholder="firstNamePlaceholder"
+                                    required
+                                    autocomplete="given-name"
+                                >
+                            </div>
+                            <span class="error-message" id="firstNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" data-i18n="lastName">Tên *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    placeholder="Nhập tên"
+                                    data-i18n-placeholder="lastNamePlaceholder"
+                                    required
+                                    autocomplete="family-name"
+                                >
+                            </div>
+                            <span class="error-message" id="lastNameError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" data-i18n="emailLabel">Email *</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                                <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                    placeholder="example@email.com"
+                                    data-i18n-placeholder="emailPlaceholder"
+                                required
+                                autocomplete="email"
+                            >
+                        </div>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username" data-i18n="usernameLabel">Tên đăng nhập *</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="8.5" cy="7" r="4"></circle>
+                                <polyline points="17 11 19 13 23 9"></polyline>
+                            </svg>
+                                <input 
+                                type="text" 
+                                id="username" 
+                                name="username" 
+                                    placeholder="Chọn tên đăng nhập"
+                                    data-i18n-placeholder="usernamePlaceholder"
+                                required
+                                autocomplete="username"
+                            >
+                        </div>
+                        <span class="error-message" id="usernameError"></span>
+                        <span class="help-text">Ít nhất 4 ký tự, chỉ chứa chữ cái, số và dấu gạch dưới</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" data-i18n="passwordLabel">Mật khẩu *</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="Tạo mật khẩu mạnh"
+                                data-i18n-placeholder="createPasswordPlaceholder"
+                                required
+                                autocomplete="new-password"
+                            >
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="error-message" id="passwordError"></span>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <span class="strength-text" id="strengthText">Độ mạnh mật khẩu</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword" data-i18n="confirmPasswordLabel">Xác nhận mật khẩu *</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <input 
+                                type="password" 
+                                id="confirmPassword" 
+                                name="confirmPassword" 
+                                placeholder="Nhập lại mật khẩu"
+                                data-i18n-placeholder="confirmPasswordPlaceholder"
+                                required
+                                autocomplete="new-password"
+                            >
+                            <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                                <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span class="checkmark"></span>
+                            <span class="checkbox-label" data-i18n="termsText">
+                                Tôi đồng ý với <a href="#" class="link">Điều khoản dịch vụ</a> và <a href="#" class="link">Chính sách bảo mật</a>
+                            </span>
+                        </label>
+                        <span class="error-message" id="termsError"></span>
+                    </div>
+
+                    <button type="submit" class="btn-register">
+                        <span class="btn-text" data-i18n="createAccountBtn">Tạo tài khoản</span>
+                        <span class="btn-loader"></span>
+                    </button>
+
+                    <div class="divider">
+                        <span>hoặc đăng ký với</span>
+                    </div>
+
+                    <div class="social-register">
+                        <button type="button" class="social-btn google">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            </svg>
+                            Google
+                        </button>
+                        <button type="button" class="social-btn facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            Facebook
+                        </button>
+                    </div>
+
+                    <div class="login-link">
+                        Đã có tài khoản? <a href="login.html">Đăng nhập ngay</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

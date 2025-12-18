@@ -1,0 +1,36 @@
+{
+  "3": {
+    "youtube": true,
+    "tiktok": true,
+    "zalo": true,
+    "facebook": true
+  },
+  "4": {
+    "facebook": true,
+    "zalo": true,
+    "tiktok": true,
+    "youtube": true
+  },
+  "5": {
+    "tiktok": true,
+    "zalo": true
+  },
+  "6": {
+    "facebook": true,
+    "zalo": true,
+    "tiktok": true,
+    "youtube": true
+  },
+  "7": {
+    "tiktok": true,
+    "zalo": true,
+    "facebook": true,
+    "youtube": true
+  },
+  "11": {
+    "facebook": true,
+    "zalo": true,
+    "tiktok": true,
+    "youtube": true
+  }
+}

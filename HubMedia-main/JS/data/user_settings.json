@@ -1,0 +1,14 @@
+{
+  "3": {
+    "enable2FA": true,
+    "scheduleReminders": true,
+    "weeklyPerformanceReport": false
+  },
+  "4": {
+    "weeklyPerformanceReport": true,
+    "newFeaturesUpdates": false,
+    "scheduleReminders": true,
+    "commentsInteractions": false,
+    "enable2FA": false
+  }
+}

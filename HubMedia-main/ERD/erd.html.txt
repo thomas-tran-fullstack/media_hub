@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>ERD - Livestream & Interaction (Mermaid)</title>
+  <script type="module">
+    // Load mermaid from CDN
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+  <style>
+    body { font-family: "Segoe UI", Roboto, Arial, sans-serif; margin: 12px; }
+    h1 { text-align: center; margin-bottom: 8px; }
+    /* Optionally increase svg size */
+    .mermaid { max-width: 1200px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <h1>Entity Relationship Diagram — Livestream & Interaction</h1>
+
+  <!-- Mermaid diagram -->
+  <div class="mermaid">
+erDiagram
+  %% Entities with attributes (Mermaid's ERD field syntax)
+  USER {
+    int user_id PK "User primary key"
+    string name
+    string role "Customer | ContentManager | Moderator"
+    string email
+    string status
+  }
+
+  CONTENT_MANAGER {
+    int manager_id PK
+    int user_id FK
+  }
+
+  MODERATOR {
+    int moderator_id PK
+    int user_id FK
+  }
+
+  LIVESTREAM {
+    int livestream_id PK
+    string title
+    datetime start_time
+    datetime end_time
+    string status
+    int content_manager_id FK
+  }
+
+  COMMENT {
+    int comment_id PK
+    int user_id FK
+    int livestream_id FK
+    text content
+    datetime timestamp
+    string status "visible|pending|deleted"
+    int parent_comment_id FK "self-referential reply"
+  }
+
+  CHAT_MESSAGE {
+    int message_id PK
+    int user_id FK
+    int livestream_id FK
+    text content
+    datetime timestamp
+  }
+
+  VOD {
+    int vod_id PK
+    int livestream_id FK
+    string url
+    datetime created_at
+  }
+
+  MODERATION {
+    int moderation_id PK
+    int moderator_id FK
+    int comment_id FK
+    string action_type "approve|reject|delete|flag"
+    string reason
+    datetime timestamp
+    int spam_filter_id FK
+  }
+
+  SPAM_FILTER {
+    int spam_filter_id PK
+    string rule_name
+    string description
+    boolean enabled
+  }
+
+  %% Relationships with cardinality
+  %% Notation: A ||--o{ B : "one-to-many" (|| one, }o{ many optional)
+  USER ||--o{ COMMENT : "writes"
+  USER ||--o{ CHAT_MESSAGE : "sends"
+  USER ||--o{ MODERATION : "performs"  %% moderator role expected
+  CONTENT_MANAGER ||--o{ LIVESTREAM : "starts"
+  LIVESTREAM ||--o{ COMMENT : "has"
+  LIVESTREAM ||--o{ CHAT_MESSAGE : "has"
+  LIVESTREAM ||--|| VOD : "saved_as"
+  MODERATOR ||--o{ MODERATION : "performs"
+  MODERATION }o--|| COMMENT : "on" 
+  SPAM_FILTER ||--o{ MODERATION : "used_by"
+  COMMENT ||--o{ COMMENT : "replies_to"
+</div>
+
+  <p style="text-align:center; font-size:0.9em; color:#555; margin-top:14px;">
+    Ghi chú: || = one, }o{ = zero-or-more (many, optional), ||--o{ = one-to-many.  
+    Bạn có thể điều chỉnh thuộc tính / tên entity theo nhu cầu.
+  </p>
+</body>
+</html>
